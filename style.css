@@ -1,0 +1,105 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: #eee;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0f0f0f;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+/* Scrolled state */
+nav.scrolled {
+  background-color: #1a002a;
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
+}
+
+/* Logo */
+.logo {
+  color: #39ff14;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #39ff14;
+}
+
+/* Menu */
+ul.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+ul.nav-menu li {
+  position: relative;
+}
+
+ul.nav-menu li a {
+  text-decoration: none;
+  color: #00eaff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 5px;
+  transition: color 0.3s;
+  position: relative;
+}
+
+/* Underline hover effect */
+ul.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #00ffe1, #ff00c8, #00ff57);
+  box-shadow: 0 0 10px #00ffe1;
+  transition: width 0.3s ease-in-out;
+}
+
+ul.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+ul.nav-menu li a:hover {
+  color: #ff00c8;
+  text-shadow: 0 0 5px #ff00c8;
+}
+
+/* Responsive menu (optional) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  ul.nav-menu {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    gap: 15px;
+  }
+
+  ul.nav-menu li a {
+    width: 100%;
+    padding: 10px;
+  }
+}
